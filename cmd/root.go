@@ -33,7 +33,8 @@ var rootCmd = &cobra.Command{
 			fmt.Println(err)
 			return
 		}
-		req.Header.Add("Authorization", "Bearer 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")
+		bearer := "Bearer " // insert personal access token here
+		req.Header.Add("Authorization", bearer)
 		resp, err := client.Do(req)
 		if err != nil {
 			fmt.Println(err)
